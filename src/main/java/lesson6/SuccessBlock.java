@@ -1,5 +1,6 @@
 package lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +13,7 @@ public class SuccessBlock extends BaseView {
 
     @FindBy(xpath = "//div [@class=\"layer_cart_product col-xs-12 col-md-6\"]")
     private WebElement successBlock;
-
+    @Step("Ожидаем появления successBlock")
     public SuccessBlock webDriverWaitSuccessBlock() {
 
         webDriverWait.until(ExpectedConditions.visibilityOf(successBlock));
@@ -26,7 +27,7 @@ public class SuccessBlock extends BaseView {
 
     @FindBy(xpath = "//a[@title=\"Proceed to checkout\"]")
     private WebElement ProceedToCheckoutButton;
-
+    @Step("Кликаем на кнопку ProceedToCheckout")
     public ShoppingCartPage clickProceedToCheckoutButton() {
 
         actions.moveToElement(ProceedToCheckoutButton).click()
